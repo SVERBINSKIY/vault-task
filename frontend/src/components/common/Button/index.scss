@@ -1,0 +1,53 @@
+@import 'src/styles/variable';
+
+.button {
+  height: 48px;
+  width: 100%;
+  padding: 0 16px;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+              box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+              border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+              color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.contained {
+  border: none;
+  background-color: $primary;
+  color: white;
+
+  &:hover {
+    background-color: $primary_hover;
+  }
+}
+
+.outlined {
+  border: 1px solid $primary;
+  color: $primary;
+
+  text-decoration: underline;
+
+  &:hover {
+    border: 1px solid $border;
+  }
+}
+
+.text {
+  border: none;
+
+  text-decoration: underline;
+  color: $text;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  color: $text;
+  background-color: $disabled;
+}

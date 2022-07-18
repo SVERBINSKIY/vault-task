@@ -1,0 +1,38 @@
+@import 'src/styles/variable';
+
+.label {
+  display: block;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: $text;
+
+  &__error {
+    color: $error;
+  }
+}
+
+.control {
+  height: 48px;
+  width: 100%;
+  padding: 0 10px;
+  border-radius: 5px;
+  background-color: $background_primary;
+  border: none;
+
+  &__error {
+    outline: 1px solid $error;
+    color: $error;
+  }
+
+  &:focus {
+    outline: 1px solid $primary;
+  }
+}
+
+.input__error {
+  margin-top: 5px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 12px;
+  color: $error;
+}

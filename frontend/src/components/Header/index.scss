@@ -1,0 +1,86 @@
+@import 'src/styles/variable';
+
+.header {
+  width: 100%;
+  height: 80px;
+  padding: 16px 150px;
+  margin-bottom: 50px;
+  color: $text;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px 0;
+
+    &__logo {
+      a, a:visited {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28px;
+        color: $text;
+
+        cursor: pointer;
+
+        text-decoration: none;
+      }
+    }
+
+    &__nav {
+      width: 100%;
+
+      a, a:visited {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 28px;
+        color: $text;
+
+        margin-right: 30px;
+
+        text-decoration: none;
+
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__user-controller {
+      display: flex;
+      justify-content: flex-end;
+
+      a, a:visited {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 28px;
+        color: $text;
+
+        border: 1px solid $border;
+        border-radius: 5px;
+        padding: 0 10px;
+
+        text-decoration: none;
+
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      span {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 28px;
+        color: $text;
+      }
+    }
+  }
+}
