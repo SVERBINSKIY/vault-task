@@ -80,6 +80,22 @@
         font-weight: 500;
         line-height: 28px;
         color: $text;
+
+        margin-right: 10px;
+      }
+
+      button {
+        height: 28px;
+        border: none;
+        border-radius: 5px;
+        outline: 1px solid $border;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+          outline: none;
+          background-color: $primary;
+        }
       }
     }
   }

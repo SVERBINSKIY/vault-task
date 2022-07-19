@@ -1,6 +1,7 @@
 export const LOGIN_USER_CLICK = 'LOGIN_USER_CLICK';
 export const LOGIN_USER = 'LOGIN_USER';
 export const LOGIN_REFRESH = 'LOGIN_REFRESH';
+export const LOGOUT_USER = 'LOGOUT_USER';
 
 export const loginUserClickAction = (payload) => ({
   type: LOGIN_USER_CLICK,

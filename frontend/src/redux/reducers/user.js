@@ -10,6 +10,9 @@ const userReducer = (state = initialState, action) => {
     case constants.LOGIN_USER:
       return { ...state, isAuth: true, currentUser: action.payload };
 
+    case constants.LOGOUT_USER:
+      return { ...state, isAuth: false, currentUser: null };
+
     default:
       return state
   }

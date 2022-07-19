@@ -2,11 +2,11 @@ import {call, put, takeLatest} from 'redux-saga/effects';
 
 import {loginUser, refreshLogin} from 'api';
 
-import {saveToLS, getDataFromLS} from 'utils/localstorage';
+import {saveToLS, getDataFromLS, removeFromLS} from 'utils/localstorage';
 
 import {actions, constants} from '../actions';
 
-const userKeyForLS = 'userData';
+export const userKeyForLS = 'userData';
 
 function* loginWorker({payload}) {
   try {
@@ -28,11 +28,17 @@ function* loginRefreshWorker() {
   yield put(actions.showLoaderAction());
   const response = yield call(refreshLogin, userData);
   yield put(actions.loginUserAction(response));
+  yield put(actions.hideLoaderAction());
+}
+
+function* logoutWorker() {
+  yield call(removeFromLS, userKeyForLS);
 }
 
 function* loginWatcher() {
   yield takeLatest(constants.LOGIN_USER_CLICK, loginWorker);
   yield takeLatest(constants.LOGIN_REFRESH, loginRefreshWorker);
+  yield takeLatest(constants.LOGOUT_USER, logoutWorker);
 }
 
 export default loginWatcher;

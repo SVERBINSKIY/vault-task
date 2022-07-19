@@ -1,16 +1,22 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, {useCallback} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 
-import { selectUsername, selectAuthStatus } from 'redux/selectors/user';
+import {selectAuthStatus, selectUsername} from 'redux/selectors/user';
+import {constants} from 'redux/actions';
 
 import Header from './Header';
 
 const HeaderContainer = () => {
+  const dispatch = useDispatch();
   const isAuth = useSelector(selectAuthStatus);
   const username = useSelector(selectUsername);
 
+  const logoutHandler = useCallback(() => {
+    dispatch({type: constants.LOGOUT_USER});
+  }, [dispatch]);
+
   return (
-    <Header isAuth={isAuth} username={username} />
+    <Header isAuth={isAuth} username={username} logoutHandler={logoutHandler}/>
   );
 }
 

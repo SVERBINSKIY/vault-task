@@ -54,3 +54,31 @@ img {
 article > * + * {
   margin-top: 1em;
 }
+
+
+@media (max-width: 900px) {
+  .header {
+    padding: 16px 25px;
+  }
+  .header__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .header__wrapper__logo {
+    display: none;
+  }
+}
+
+@media (max-width: 510px) {
+  .header {
+    padding: 16px 25px;
+  }
+  .header__wrapper {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  .header__wrapper__logo {
+    display: none;
+  }
+}
